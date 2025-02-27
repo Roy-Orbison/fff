@@ -716,7 +716,7 @@ open() {
         # Open all text-based files in '$EDITOR'.
         # Everything else goes through 'xdg-open'/'open'.
         case "$mime_type" in
-            text/*|*x-empty*|*json*)
+            text/*|message/*|*/x-empty|*/json|*+json|*/xml|*+xml)
                 clear_screen
                 reset_terminal
                 "${VISUAL:-${EDITOR:-vi}}" "$1"
